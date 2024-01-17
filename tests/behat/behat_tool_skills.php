@@ -100,7 +100,7 @@ class behat_tool_skills extends behat_base {
         global $CFG;
 
         $cssclass = ($CFG->branch <= "402") ? '.confirmation-dialogue' : '.modal-footer';
-        $this->execute('behat_general::i_should_see, ["Are you sure! do you want to '.$messagetext.' this skill and its levels",
+        $this->execute('behat_general::assert_element_contains_text, ["Are you sure! do you want to '.$messagetext.' this skill and its levels",
         '.'"'.$cssclass.'"'.', "css_element"]');
     }
 
